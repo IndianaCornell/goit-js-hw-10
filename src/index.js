@@ -13,8 +13,6 @@ const refs = {
 
 const { select, loader, error, catInfo } = refs;
 
-// select.classList.add('is-hidden');
-loader.classList.remove('is-hidden');
 error.classList.add('is-hidden');
 catInfo.classList.add('is-hidden');
 select.classList.add('is-hidden');
@@ -25,6 +23,7 @@ let arrBreedsId = [];
 
 fetchBreeds()
   .then(data => {
+    select.classList.remove('is-hidden');
     data.forEach(breed =>
       arrBreedsId.push({ text: breed.name, value: breed.id })
     );
@@ -32,6 +31,9 @@ fetchBreeds()
       select: select,
       data: arrBreedsId,
     });
+  })
+  .then(() => {
+    loader.classList.add('is-hidden');
     select.classList.remove('is-hidden');
   })
   .catch(err => {
