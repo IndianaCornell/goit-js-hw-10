@@ -14,7 +14,8 @@ const refs = {
 
 const { select, loader, error, catInfo } = refs;
 
-loader.classList.add('is-hidden');
+select.classList.add('is-hidden');
+loader.classList.remove('is-hidden');
 error.classList.add('is-hidden');
 catInfo.classList.add('is-hidden');
 
