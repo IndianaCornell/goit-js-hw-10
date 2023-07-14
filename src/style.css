@@ -8,8 +8,10 @@ body {
 }
 
 img {
+  margin: 10px;
   display: block;
   max-width: 100%;
+  border-radius: 20px;
 }
 
 .cat-info {
