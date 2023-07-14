@@ -5,6 +5,7 @@
 body {
   color: #3e3838;
   line-height: 2;
+  text-align: center;
 }
 
 img {
@@ -19,10 +20,12 @@ img {
   border-radius: 20px;
   padding: 20px;
   background-color: #a7b1b077;
+  text-align: center;
 }
 
 .desc {
   width: 300px;
+  margin: 0 auto;
 }
 
 .is-hidden {
