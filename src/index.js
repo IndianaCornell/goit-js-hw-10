@@ -1,8 +1,9 @@
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
+
 import './style.css';
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 import { Report } from 'notiflix/build/notiflix-report-aio';
-import SlimSelect from 'slim-select';
-import 'slim-select/dist/slimselect.css';
 
 const refs = {
   select: document.querySelector('.breed-select'),
@@ -44,9 +45,11 @@ fetchBreeds()
 //   let's look for information about the cat
 
 const onSelectBreed = function (event) {
-  const selectedBreed = event.currentTarget.value;
   loader.classList.remove('is-hidden');
-  select.classList.add('is-hidden');
+  catInfo.classList.add('is-hidden');
+
+  const selectedBreed = event.currentTarget.value;
+
   fetchCatByBreed(selectedBreed)
     .then(data => {
       const { url, breeds } = data[0];
