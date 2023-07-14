@@ -32,6 +32,7 @@ fetchBreeds()
       select: select,
       data: arrBreedsId,
     });
+    select.classList.remove('is-hidden');
   })
   .catch(err => {
     select.classList.add('is-hidden');
@@ -46,8 +47,10 @@ fetchBreeds()
 //   let's look for information about the cat
 
 const onSelectBreed = function (event) {
+  select.classList.add('is-hidden');
   loader.classList.remove('is-hidden');
   catInfo.classList.add('is-hidden');
+
   const selectedBreed = event.currentTarget.value;
 
   fetchCatByBreed(selectedBreed)
